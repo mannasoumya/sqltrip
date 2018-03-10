@@ -26,7 +26,7 @@ System.out.println("\n Press Author/A/Auth in the choice to see coder info...");
 System.out.print("\n\n Do you want to start SQL Trip to make an adventurous journey through the site ?? [yes/no/Y/N] (Default is no) : ");
 String choice;
 choice=br.readLine();choice=choice.trim();
-if(choice.equals("yes") || choice.equals("Y"))
+if(choice.equalsIgnoreCase("yes") || choice.equalsIgnoreCase("Y"))
 {
 System.out.print("\n\n Starting SQL Trip...Please wait... ");
 Thread.sleep(2000);
