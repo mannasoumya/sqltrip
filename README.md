@@ -22,4 +22,6 @@ Step 4: Running : Command -> $ java sqltrip
 
 Note : please check whether sqltrip.class file is created or not. If not remove the 'sqltrip' folder and clone again and repeat the above steps.  
 
+For updating sqltrip : Command : $ .../.../sqltrip# git pull origin   
+
 Enjoy :-)
