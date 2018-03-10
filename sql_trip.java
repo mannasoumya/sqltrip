@@ -1,6 +1,6 @@
 import java.io.*;
 import java.net.*;
-class sql_trip1
+class sql_trip
 {
 public static void main(String [] args)throws Exception
 {
