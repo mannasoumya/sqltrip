@@ -81,7 +81,7 @@ writer1.close();
 writer2.close();
 s1="";
 if(k==(sql_commands.length)-1)
-{ System.out.print(ConsoleColors.GREEN_BOLD+"\n\n\n Program Ended.. Check Generated HTML Files in the same Directory..\n"+ConsoleColors.RESET);}
+{ System.out.print(ConsoleColors.GREEN_BOLD+"\n Program Ended.. Check Generated HTML Files in the same Directory..\n\n\n"+ConsoleColors.RESET);}
 }
 
 
