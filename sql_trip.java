@@ -1,6 +1,6 @@
 import java.io.*;
 import java.net.*;
-class sql_trip
+class sql_trip1
 {
 public static void main(String [] args)throws Exception
 {
@@ -77,7 +77,7 @@ s1="";
 
 
 }
-else if(choice.equalsIgnoreCase("author")||choice.equals("A")||choice.equals("A")||choice.equalsIgnoreCase("auth"))
+else if(choice.equalsIgnoreCase("author")||choice.equals("a")||choice.equals("A")||choice.equalsIgnoreCase("auth"))
 {
 authorinfo(); }
 else { System.out.print("\n\n SQL Trip not started... Exiting..Program Stopped.."); System.exit(0);}
@@ -137,6 +137,6 @@ System.out.print("\n \n GIThub : https://github.com/mannasoumya");
 System.out.print("\n \n \n\n Press Enter To go to Main Program... \n\n ||||||||||||||||||||||||||||||||||||| \t");
 BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 br.readLine();
-main();
+main(new String[0]);
 }
 }
