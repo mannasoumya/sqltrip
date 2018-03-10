@@ -67,7 +67,7 @@ urlString += current;
 System.out.println(urlString);
 if((urlString.indexOf("Error"))>=0 || (urlString.indexOf("ERROR"))>=0 || (urlString.indexOf("error"))>=0 ||(urlString.indexOf("warning"))>=0 ||
 (urlString.indexOf("WARNING"))>=0 ||(urlString.indexOf("Warning"))>=0)
-{System.out.print("\n\n Error Based SQL Injection might be possible\n\n"); }
+{System.out.print(ConsoleColors.GREEN_BOLD+"\n\n Error Based SQL Injection might be possible\n\n"+ConsoleColors.RESET); }
 BufferedWriter writer1 = new BufferedWriter(new FileWriter("urlsqltrip_demo"+k+".txt"));
 BufferedWriter writer2 = new BufferedWriter(new FileWriter("urlsqltrip_demo"+k+".html"));
 writer1.write(urlString);
@@ -89,7 +89,7 @@ s1="";
 else if(choice.equalsIgnoreCase("author")||choice.equals("a")||choice.equals("A")||choice.equalsIgnoreCase("auth"))
 {
 authorinfo(); }
-else { System.out.print("\n\n SQL Trip not started... Exiting..Program Stopped.."); System.exit(0);}
+else { System.out.print(ConsoleColors.RED_BOLD"\n\n SQL Trip not started... Exiting..Program Stopped.."+ConsoleColors.RESET); System.exit(0);}
 }
 
 
@@ -121,7 +121,7 @@ String inputuu="";
 boolean flag=false;
 BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 while(flag==false)
-{System.out.print("\n\n Enter URL followed by parameter :\t");
+{System.out.print(ConsoleColors.CYAN+"\n\n Enter URL followed by parameter :\t"+ConsoleColors.RESET);
 int count=0;
 String b ="";
 inputuu=br.readLine();
