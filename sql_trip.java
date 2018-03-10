@@ -80,6 +80,8 @@ writer1.append(urlString);*/
 writer1.close();
 writer2.close();
 s1="";
+if(k==(sql_commands.length)-1)
+{ System.out.print(ConsoleColors.GREEN_BOLD+"\n\n\n Program Ended.. Check Generated HTML Files in the same Directory..\n"+ConsoleColors.RESET);
 }
 
 
