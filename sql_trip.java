@@ -26,7 +26,7 @@ System.out.println("\n Press Author/A/Auth in the choice to see coder info...");
 System.out.print("\n\n Do you want to start SQL Trip to make an adventurous journey through the site ?? [yes/no/Y/N] (Default is no) : ");
 String choice;
 choice=br.readLine();choice=choice.trim();
-if(choice.equals("yes") || choice.equals("Y"))
+if(choice.equalsIgnoreCase("yes") || choice.equalsIgnoreCase("Y"))
 {
 System.out.print("\n\n Starting SQL Trip...Please wait... ");
 Thread.sleep(2000);
@@ -63,13 +63,16 @@ if((urlString.indexOf("Error"))>=0 || (urlString.indexOf("ERROR"))>=0 || (urlStr
 (urlString.indexOf("WARNING"))>=0 ||(urlString.indexOf("Warning"))>=0)
 {System.out.print(ConsoleColors.GREEN_BOLD+"\n\n Error Based SQL Injection might be possible\n\n"+ConsoleColors.RESET); }
 BufferedWriter writer1 = new BufferedWriter(new FileWriter("urlsqltrip_demo"+k+".txt"));
+BufferedWriter writer2 = new BufferedWriter(new FileWriter("urlsqltrip_demo"+k+".html"));
 writer1.write(urlString);
+writer2.write(urlString);
 /*writer1.append(' ');
 for(int i=1;i<=3;i++) writer1.append(System.lineSeparator());
 writer1.append(" APPENDING ...");
 for(int i=1;i<=3;i++) writer1.append(System.lineSeparator());
 writer1.append(urlString);*/
 writer1.close();
+writer2.close();
 s1="";
 }
 
