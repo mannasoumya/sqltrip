@@ -6,8 +6,9 @@ public static void main(String [] args)throws Exception
 {
 BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 System.out.print("\f");
-System.out.print("\n\t\t\t\t\t========================================");
-System.out.print("\n\t\t\t\t\tThis is SQL Trip... A SQL injection Tool \n\t\t\t\t\t========================================\n");
+System.out.print(ConsoleColors.YELLOW_BOLD+"\n\t\t\t\t\t========================================"+ConsoleColors.RESET);
+System.out.print("\n\t\t\t\t\tThis is SQL Trip... A SQL Injection Tool ");
+System.out.print(ConsoleColors.YELLOW_BOLD+"\n\t\t\t\t\t========================================\n"+ConsoleColors.RESET);
 String inputurl;
 inputurl=input();
 try{
@@ -22,7 +23,7 @@ System.out.println(" port is " + url.getPort());
 System.out.println(" default port is " + url.getDefaultPort());
 System.out.println(" query is " + url.getQuery());
 System.out.println(" ref is " + url.getRef());
-System.out.println("\n Press Author/A/Auth in the choice to see coder info..."); 
+System.out.println("\n Press Author/A/Auth in the choice to see coder info...");
 System.out.print("\n\n Do you want to start SQL Trip to make an adventurous journey through the site ?? [yes/no/Y/N] (Default is no) : ");
 String choice;
 choice=br.readLine();choice=choice.trim();
@@ -88,7 +89,7 @@ s1="";
 else if(choice.equalsIgnoreCase("author")||choice.equals("a")||choice.equals("A")||choice.equalsIgnoreCase("auth"))
 {
 authorinfo(); }
-else { System.out.print("\n\n SQL Trip not started... Exiting..Program Stopped.."); System.exit(0);}
+else { System.out.print(ConsoleColors.RED_BOLD+"\n\n SQL Trip not started... Exiting..Program Stopped..\n\n\n"+ConsoleColors.RESET); System.exit(0);}
 }
 
 
@@ -136,8 +137,9 @@ return ""+inputuu;
 public static void authorinfo()throws Exception
 {
 System.out.print("\f");
-System.out.print("\n\t\t\t\t\t========================================");
-System.out.print("\n\t\t\t\t\tThis is SQL Trip... A SQL injection Tool \n\t\t\t\t\t========================================\n");
+System.out.print(ConsoleColors.YELLOW_BOLD+"\n\t\t\t\t\t========================================"+ConsoleColors.RESET);
+System.out.print("\n\t\t\t\t\tThis is SQL Trip... A SQL Injection Tool ");
+System.out.print(ConsoleColors.YELLOW_BOLD+"\n\t\t\t\t\t========================================\n"+ConsoleColors.RESET);
 System.out.print("\n \n Author Details :-");
 System.out.print("\n \n NAME : SOUMYA MANNA");
 System.out.print("\n \n CONTACT : https://mannasoumya.blogspot.com");
