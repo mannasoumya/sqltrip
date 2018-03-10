@@ -64,7 +64,7 @@ String current;
 while((current = in.readLine()) != null) {
 urlString += current;
 }
-System.out.println(urlString);
+System.out.println(urlString); System.out.print("\n\n\n");
 if((urlString.indexOf("Error"))>=0 || (urlString.indexOf("ERROR"))>=0 || (urlString.indexOf("error"))>=0 ||(urlString.indexOf("warning"))>=0 ||
 (urlString.indexOf("WARNING"))>=0 ||(urlString.indexOf("Warning"))>=0)
 {System.out.print(ConsoleColors.GREEN_BOLD+"\n\n Error Based SQL Injection might be possible\n\n"+ConsoleColors.RESET); }
