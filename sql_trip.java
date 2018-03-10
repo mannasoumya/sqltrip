@@ -1,6 +1,6 @@
 import java.io.*;
 import java.net.*;
-class sql_trip
+class sql_trip extends ConsoleColors
 {
 public static void main(String [] args)throws Exception
 {
@@ -112,7 +112,7 @@ String inputuu="";
 boolean flag=false;
 BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 while(flag==false)
-{System.out.print("\n\n Enter URL followed by parameter :\t");
+{System.out.print(ConsoleColors.RED+"\n\n Enter URL followed by parameter :\t"+ConsoleColors.RESET);
 int count=0;
 String b ="";
 inputuu=br.readLine();
