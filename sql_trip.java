@@ -1,6 +1,6 @@
 import java.io.*;
 import java.net.*;
-class sql_trip_withconsolecolor extends ConsoleColors
+class sql_trip extends ConsoleColors
 {
 public static void main(String [] args)throws Exception
 {
