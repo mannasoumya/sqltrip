@@ -1,5 +1,6 @@
 # sqltrip
 <b>SQL Map in JAVA.</b>  
+<b>It is completely PLATFORM INDEPENDENT. Any framework running JAVA 7 or later can use this TOOL.</b>  
 Version - sql_trip0.1.  
 It is just a BETA VERSION of the general SQL Map available in KALI Linux but written from SCRATCH entirely in JAVA.  
 No code was copied. 
@@ -24,6 +25,8 @@ Step 4: Running : Command -> $ java sqltrip
 
 <b>For Updating sqltrip : Command : $ .../.../sqltrip# git pull origin </b>   
 Then <b>Compile again</b> and run. 
+  
+  
 
 
 Enjoy :-)
