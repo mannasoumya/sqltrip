@@ -6,7 +6,7 @@ public static void main(String [] args)throws Exception
 {
 BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 System.out.print("\f");
-System.out.print(ConsoleColors.YELLOW_BOLD+"\n\t\t\t\t\t========================================"+ConsoleColors.RESET);
+System.out.print(ConsoleColors.YELLOW_BOLD+"\n\t\t\t\t\t========================================\n"+ConsoleColors.RESET);
 System.out.print("\n\t\t\t\t\tThis is SQL Trip... A SQL Injection Tool ");
 System.out.print(ConsoleColors.YELLOW_BOLD+"\n\t\t\t\t\t========================================\n"+ConsoleColors.RESET);
 String inputurl;
