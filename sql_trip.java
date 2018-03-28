@@ -33,7 +33,7 @@ System.out.print("\n\n Starting SQL Trip...Please wait... ");
 Thread.sleep(2000);
 System.out.print("\n\n Started...\n\n");
 int vulncolscount=orderbyclausecheck(url);
-System.out.print(ConsoleColors.CYAN_BOLD+"\n\n\n\n THERE ARE "+vulncolscount+" VULNERABLE COLUMNS"+ConsoleColors.RESET);
+System.out.print(ConsoleColors.CYAN_BOLD+"\n\n\n\n\t THERE ARE "+vulncolscount+" VULNERABLE COLUMNS"+ConsoleColors.RESET);
 Thread.sleep(3000);
 String urlworkwith=url.toString();
 String s=urlworkwith; String end="--+";String s1="";
