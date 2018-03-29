@@ -168,7 +168,7 @@ String s=urlworkwith; String end="--+";
 String c,d;
 c=s+" order by ";
 int count=1;
-System.out.print(ConsoleColors.PURPLE_BOLD+"\n\n\n SQL Trip CHECKING FOR VULNERABLE COLUMNS "+ConsoleColors.RESET);
+System.out.print(ConsoleColors.PURPLE_BOLD+"\n\n SQL Trip CHECKING FOR VULNERABLE COLUMNS "+ConsoleColors.RESET);
 
 while(flag==false)
 {
