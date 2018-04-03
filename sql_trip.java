@@ -1,6 +1,6 @@
 import java.io.*;
 import java.net.*;
-class sql_trip_errorhtmlremoved_and_orderby_function_with_consolecolors28thmarch extends ConsoleColors
+class sql_trip extends ConsoleColors
 {
 public static void main(String [] args)throws Exception
 {
