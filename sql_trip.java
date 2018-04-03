@@ -171,7 +171,7 @@ System.out.print("\f");
 System.out.print(ConsoleColors.YELLOW_BOLD+"\n\t\t\t\t\t========================================"+ConsoleColors.RESET);
 System.out.print("\n\t\t\t\t\tThis is SQL Trip... A SQL Injection Tool ");
 System.out.print(ConsoleColors.YELLOW_BOLD+"\n\t\t\t\t\t========================================\n"+ConsoleColors.RESET);
-System.out.print("\n \n HELP :-");
+System.out.print(ConsoleColors.GREEN_LIGHT+"\n \n HELP MENU:-"+ConsoleColors.RESET);
 System.out.print("\n \n This is SQL Trip.");
 System.out.print("\n \n Enter URL followed by parameter :");
 System.out.print("\n Here write the complete HTTP URL of the site you want to perform SQL Injection.");
