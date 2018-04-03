@@ -134,7 +134,7 @@ public static String input()throws Exception
 String inputuu="";
 boolean flag=false;
 BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
-System.out.print(ConsoleColors.CYAN+"\n (Confused ? Just Type http://xyz.xyz --> Press Enter --> Type help in next menu)"+ConsoleColors.RESET);
+System.out.print(ConsoleColors.CYAN_BOLD+"\n (Confused ? Just Type http://xyz.xyz --> Press Enter --> Type help in next menu)"+ConsoleColors.RESET);
 while(flag==false)
 {
 System.out.print(ConsoleColors.BLUE_BOLD+"\n\n Enter URL followed by parameter :\t"+ConsoleColors.RESET);
