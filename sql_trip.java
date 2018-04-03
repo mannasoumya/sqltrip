@@ -88,7 +88,7 @@ s1="";
 indexcounter++;
 }//end of else
 if(k==(sql_commands.length)-1)
-{ System.out.print(ConsoleColors.GREEN_BOLD+"\n Program Ended.. Check Generated HTML Files named \"urlsqltrip_result\" indexed as 0,1,2,... in the same Directory..\n\n\n"+ConsoleColors.RESET);}
+{ System.out.print(ConsoleColors.GREEN_BOLD+"\n SQLTrip Ended.. Check Generated HTML Files named \"urlsqltrip_result\" indexed as 0,1,2,... in the same Directory..\n\n\n"+ConsoleColors.RESET);}
 }
 
 
