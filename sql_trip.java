@@ -142,7 +142,7 @@ BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 System.out.print(ConsoleColors.CYAN+"\n (Confused ? Just Type http://xyz.xyz --> Press Enter --> Type help in next menu)"+ConsoleColors.RESET);
 while(flag==false)
 {
-System.out.print(ConsoleColors.BLUE_BOLD+"\n\n Enter URL followed by parameter :\t"+ConsoleColors.RESET);
+System.out.print(ConsoleColors.BLUE_BOLD_BRIGHT+"\n\n Enter URL followed by parameter :\t"+ConsoleColors.RESET);
 int count=0;
 String b ="";
 inputuu=br.readLine();
@@ -176,11 +176,12 @@ System.out.print("\f");
 System.out.print(ConsoleColors.YELLOW_BOLD+"\n\t\t\t\t\t========================================"+ConsoleColors.RESET);
 System.out.print("\n\t\t\t\t\tThis is SQL Trip... A SQL Injection Tool ");
 System.out.print(ConsoleColors.YELLOW_BOLD+"\n\t\t\t\t\t========================================\n"+ConsoleColors.RESET);
-System.out.print("\n \n HELP :-");
+System.out.print(ConsoleColors.GREEN_BRIGHT+"\n \n HELP :-"+ConsoleColors.RESET);
 System.out.print("\n \n This is SQL Trip.");
 System.out.print("\n \n Enter URL followed by parameter :");
 System.out.print("\n Here write the complete HTTP URL of the site you want to perform SQL Injection.");
 System.out.print("\n Valid Injectable parameter is necessary for appropriate results of Injection.");
+System.out.print("\n \n For SQL Injection Parameters refer to https://www.owasp.org/index.php/Testing_for_SQL_Injection_(OTG-INPVAL-005)#Standard_SQL_Injection_Testing");
 System.out.print("\n \n Then Just Press \"Y\". Sit back and enjoy SQL Trip doing its work... ");
 System.out.print("\n \n After Program Stops, Check for html files generated in the same directory."); 
 System.out.print("\n \n \n\n Press Enter To go to Main Program... \n\n ||||||||||||||||||||||||||||||||||||| \t");
